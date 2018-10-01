@@ -14,12 +14,16 @@ public class Cart {
         return products.keySet().size();
     }
 
-    public double computePrice() {
+    public double computeHtPrice() {
         return products
                 .entrySet()
                 .stream()
                 .map(x -> x.getKey().getPrice() * x.getValue())
                 .mapToDouble(Double::doubleValue)
                 .sum();
+    }
+
+    public double computeTotalPrice(final Tax tax) {
+        return computeHtPrice() * tax.value();
     }
 }
