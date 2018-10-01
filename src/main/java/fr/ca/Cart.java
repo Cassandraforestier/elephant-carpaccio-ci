@@ -27,8 +27,9 @@ public class Cart {
 
         if (priceWithoutTax >= 1000 && priceWithoutTax < 5000) {
             return priceWithoutTax * 0.97d;
+        } else if (priceWithoutTax >= 7000 && priceWithoutTax < 10000) {
+            return priceWithoutTax * 0.93d;
         }
-
         return priceWithoutTax;
     }
 
