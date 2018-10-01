@@ -1,7 +1,5 @@
 package fr.ca;
 
-import fr.ca.Item;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,12 +15,11 @@ public class Cart {
     }
 
     public double computePrice() {
-        double totalPrice = 0.0d;
-
-        for (Item i : products.keySet()) {
-            totalPrice += (i.getPrice() * products.get(i));
-        }
-
-        return totalPrice;
+        return products
+                .entrySet()
+                .stream()
+                .map(x -> x.getKey().getPrice() * x.getValue())
+                .mapToDouble(Double::doubleValue)
+                .sum();
     }
 }
