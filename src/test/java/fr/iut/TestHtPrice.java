@@ -1,10 +1,8 @@
 package fr.iut;
 
+import fr.ca.Cart;
 import fr.ca.Item;
 import org.junit.Test;
-
-import java.util.HashMap;
-import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;

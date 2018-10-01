@@ -1,4 +1,4 @@
-package fr.iut;
+package fr.ca;
 
 import fr.ca.Item;
 
