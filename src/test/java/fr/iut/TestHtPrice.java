@@ -49,4 +49,14 @@ public class TestHtPrice {
 
         assertEquals(71.4, c.computeTotalPrice(Tax.DE), 0.01d);
     }
+
+    @Test
+    public void testDkTax() {
+        final Item i = new Item("Counter strike", 60.0d);
+
+        final Cart c = new Cart();
+        c.addProduct(i, 1);
+
+        assertEquals(75, c.computeTotalPrice(Tax.DK), 0.01d);
+    }
 }

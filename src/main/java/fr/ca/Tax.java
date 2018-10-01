@@ -1,7 +1,7 @@
 package fr.ca;
 
 public enum Tax {
-    DE(1.19);
+    DE(1.19), DK(1.25);
 
     private final double tax;
 
