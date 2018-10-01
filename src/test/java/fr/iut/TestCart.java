@@ -69,4 +69,14 @@ public class TestCart {
 
         assertEquals(71.76, c.computeTotalPrice(Tax.FR), 0.01d);
     }
+
+    @Test
+    public void test3PercentReduction() {
+        final Item i = new Item("Counter strike", 2000.0d);
+
+        final Cart c = new Cart();
+        c.addProduct(i, 1);
+
+        assertEquals(2320.24, c.computeTotalPrice(Tax.FR), 0.01d);
+    }
 }

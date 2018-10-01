@@ -23,7 +23,16 @@ public class Cart {
                 .sum();
     }
 
+    private double computeReduction(final double priceWithoutTax) {
+
+        if (priceWithoutTax >= 1000 && priceWithoutTax < 5000) {
+            return priceWithoutTax * 0.97d;
+        }
+
+        return priceWithoutTax;
+    }
+
     public double computeTotalPrice(final Tax tax) {
-        return computeHtPrice() * tax.value();
+        return computeReduction(computeHtPrice()) * tax.value();
     }
 }
