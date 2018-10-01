@@ -8,7 +8,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class TestHtPrice {
+public class TestCart {
 
     @Test
     public void testItemConstructor() {
@@ -58,5 +58,15 @@ public class TestHtPrice {
         c.addProduct(i, 1);
 
         assertEquals(75, c.computeTotalPrice(Tax.DK), 0.01d);
+    }
+
+    @Test
+    public void testFrTax() {
+        final Item i = new Item("Counter strike", 60.0d);
+
+        final Cart c = new Cart();
+        c.addProduct(i, 1);
+
+        assertEquals(71.76, c.computeTotalPrice(Tax.FR), 0.01d);
     }
 }
