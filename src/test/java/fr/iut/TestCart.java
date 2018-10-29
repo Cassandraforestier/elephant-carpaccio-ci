@@ -15,7 +15,7 @@ public class TestCart {
         final Item i = new Item("Counter strike", 60.0d);
 
         assertEquals("Counter strike", i.getLabel());
-        assertTrue(61.0d == i.getPrice());
+        assertTrue(60.0d == i.getPrice());
     }
 
     @Test
